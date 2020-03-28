@@ -1,7 +1,97 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  {% include head.html %}
-  <body>
-    <p>xin chào</p>
-  </body>
+{% include head.html %}
+
+<body>
+  <div class="cv-wrapper">
+    <!-- begin header -->
+    <div class="cv-header">
+      <div class="left">
+        <img class="fit-img" src="../assets/img/avatar.png">
+      </div>
+      <div class="right">
+        <div class="name-container">
+          <p class="name">NGUYỄN VĂN CÔNG</p>
+          <p class="job-name">Full Stack Developer</p>
+        </div>
+        <div class="contact-container">
+          <a>Facebook</a>
+          <a>Github</a>
+          <a>Codepen</a>
+        </div>
+      </div>
+    </div>
+    <!-- end header -->
+    <!-- begin content -->
+    <div class="cv-content">
+      <div class="row-container">
+        <h4><i class="fa fa-list-alt"></i> CAREER SUMMARY</h4>
+        <hr>
+        <p class="text-container">
+          Summarise your career here. You can make a PDF version of your resume using our free Sketch template here.
+          Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu. Lorem ipsum dolor sit amet,
+          consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+          magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+          pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+          eget.
+        </p>
+      </div>
+      <div class="row-container">     
+        <h4><i class="fa fa-cogs"></i> SKILLS & TOOLS</h4>
+        <hr>
+        <div class="skill-container">
+          <div class="skill-container-left">
+            <div class="skill-title">Frontend</div>
+            <div>Angular</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>HTML</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>CSS</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>JavaScript</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-container-left">
+            <div class="skill-title">Backend</div>
+            <div>NodeJS</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>Java</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div>Python</div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-container-left">
+            <div class="skill-title">Others</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end content -->
+</body>
+
 </html>
