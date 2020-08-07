@@ -42,39 +42,39 @@ body {
   text-align: justify;
   text-justify: inter-word;
 }
-.skill-container{
-    overflow: hidden;
+.skill-container {
+  overflow: hidden;
 }
-.skill-title{
-    text-align: center;
-    font-weight: 800;
-    font-size: 20px;
+.skill-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
 }
-.skill-container-left{
-    float: left;
-    width: 50%;
-    padding: 20px;
-    height: 250px;
+.skill-container-left {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  height: 250px;
 }
-.progress{
-    height: 10px;
-    margin-bottom: 10px;
+.progress {
+  height: 10px;
+  margin-bottom: 10px;
 }
-.name{
-    color: white;
-    font-size: 25px;
-    font-weight: 900;
-    font-family: sans-serif
+.name {
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: sans-serif;
 }
-.job-name{
-    color: white;
-    font-size: 20px;
-    font-weight: 900;
-    font-family: sans-serif
+.job-name {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: sans-serif;
 }
-.contact-container{
-    padding: 20px;
+.contact-container {
+  padding: 20px;
 }
-.name-container{
-    padding: 20px;
+.name-container {
+  padding: 20px;
 }
