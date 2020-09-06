@@ -1,97 +1,357 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
 {% include head.html %}
 
 <body>
-  <div class="cv-wrapper">
-    <!-- begin header -->
-    <div class="cv-header">
-      <div class="left">
-        <img class="fit-img" src="../assets/img/avatar.png">
-      </div>
-      <div class="right">
-        <div class="name-container">
-          <p class="name">NGUYỄN VĂN CÔNG</p>
-          <p class="job-name">Full Stack Developer</p>
-        </div>
-        <div class="contact-container">
-          <a>Facebook</a>
-          <a>Github</a>
-          <a>Codepen</a>
-        </div>
-      </div>
+    <!-- Language -->
+    <div style="position: fixed; top: 50%; left: 90%; z-index: 999;">
+        <!-- lấy ra các bài post và page liên quan tới trang hiện tại-->
+        {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+        {% if posts.size == 0 %}
+        {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+        {% endif %}
+        <!--Hiển thị -->
+        {% for post in posts %}
+        {% if page.lang == post.lang %}
+        <a href="{{ site.base-url }}{{ post.url }}" title="{{ site.data.languages[post.lang].label }}">
+            <img class="active-language" src="/assets/images/{{ post.lang }}.png" width="45px" height="35px"
+                style="margin-right: 3px;">
+        </a>
+        {% else %}
+        <a href="{{ site.base-url }}{{ post.url }}" title="{{ site.data.languages[post.lang].label }}">
+            <img class="not-active-language" src="/assets/images/{{ post.lang }}.png" width="45px" height="35px"
+                style="margin-right: 3px;">
+        </a>
+        {% endif %}
+        {% endfor %}
+
     </div>
-    <!-- end header -->
-    <!-- begin content -->
-    <div class="cv-content">
-      <div class="row-container">
-        <h4><i class="fa fa-list-alt"></i> CAREER SUMMARY</h4>
-        <hr>
-        <p class="text-container">
-          Summarise your career here. You can make a PDF version of your resume using our free Sketch template here.
-          Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-          nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu. Lorem ipsum dolor sit amet,
-          consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-          magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-          pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
-          eget.
-        </p>
-      </div>
-      <div class="row-container">     
-        <h4><i class="fa fa-cogs"></i> SKILLS & TOOLS</h4>
-        <hr>
-        <div class="skill-container">
-          <div class="skill-container-left">
-            <div class="skill-title">Frontend</div>
-            <div>Angular</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div>HTML</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div>CSS</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div>JavaScript</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
+    <article class="resume-wrapper text-center position-relative">
+        <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+            <header class="resume-header pt-4 pt-md-0">
+                <div class="media flex-column flex-md-row">
+                    <img class="mr-3 img-fluid picture mx-auto" src="/assets/images/avatar.jpg" alt="">
+                    <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+                        <div class="primary-info">
+                            <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">
+                                {{ site.data.translate_home['MY_NAME'][page.lang] }}</h1>
+                            <div class="title mb-3">{{ site.data.translate_home['JOB_TITLE'][page.lang] }}</div>
+                            <div>{{ site.data.translate_home['NICK_NAME'][page.lang] }}</div>
+                            <!-- <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#"><i class="far fa-envelope fa-fw mr-2"
+                                            data-fa-transform="grow-3"></i>nvcong239@gmail.com</a></li>
+                                <li><a href="#"><i class="fas fa-mobile-alt fa-fw mr-2"
+                                            data-fa-transform="grow-6"></i>0969363636</a></li>
+                            </ul> -->
+                        </div>
+                        <!--//primary-info-->
+                        <div class="secondary-info ml-md-auto mt-2">
+                            <ul class="resume-social list-unstyled">
+                                <li class="mb-3"><span class="fa-container text-center mr-2"><i
+                                            class="fas fa-envelope fa-fw"></i></span>{{ site.data.translate_home['GMAIL'][page.lang] }}
+                                </li>
+                                <li class="mb-3"><span class="fa-container text-center mr-2"><i
+                                            class="fas fa-mobile-alt fa-fw"></i></span>{{ site.data.translate_home['PHONE_NUMBER'][page.lang] }}
+                                </li>
+                                <li class="mb-3"><a href="https://www.facebook.com/nvcong239" style="color: white;"
+                                        target="_blank"><span class="fa-container text-center mr-2"><i
+                                                class="fab fa-facebook fa-fw"></i></span>{{ site.data.translate_home['FACE_BOOK'][page.lang] }}</a>
+                                </li>
+                                <li class="mb-3"><a style="color: white;" href="https://github.com/nvcong239"
+                                        target="_blank"><span class="fa-container text-center mr-2"><i
+                                                class="fab fa-github fa-fw"></i></span>{{ site.data.translate_home['GIT_HUB'][page.lang] }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//secondary-info-->
 
-          <div class="skill-container-left">
-            <div class="skill-title">Backend</div>
-            <div>NodeJS</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div>Java</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div>Python</div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25"
-                aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
+                    </div>
+                    <!--//media-body-->
+                </div>
+                <!--//media-->
+            </header>
+            <div class="resume-body p-5">
+                <section class="resume-section summary-section mb-5">
+                    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                        <i class="fas fa-list-alt"></i> {{ site.data.translate_home['CAREER_SUMMARY'][page.lang] }}
+                    </h2>
+                    <div class="resume-section-content">
+                        <p class="mb-0">
+                            {{ site.data.translate_home['CAREER_SUMMARY_CONTENT'][page.lang] }}
+                        </p>
+                    </div>
+                </section>
+                <!--//summary-section-->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <section class="resume-section experience-section mb-5">
+                            <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                                <i class="fas fa-briefcase"></i>
+                                {{ site.data.translate_home['WORK_EXPERIENCE'][page.lang] }}
+                            </h2>
+                            <div class="resume-section-content">
+                                <div class="resume-timeline position-relative">
+                                    <article class="resume-timeline-item position-relative pb-5">
+                                        <div class="resume-timeline-item-header mb-2">
+                                            <div class="d-flex flex-column flex-md-row">
+                                                <h3 class="resume-position-title font-weight-bold mb-1">
+                                                    {{ site.data.translate_home['INTERN'][page.lang] }}
+                                                </h3>
+                                                <!-- <div class="resume-company-name ml-auto">AI</div> -->
+                                            </div>
+                                            <!--//row-->
+                                            <div class="resume-position-time">2019 - 2020</div>
+                                        </div>
+                                        <!--//resume-timeline-item-header-->
+                                        <div class="resume-timeline-item-desc">
+                                            <p>
+                                                {{ site.data.translate_home['INTERN_CONTENT'][page.lang] }}
+                                            </p>
+                                            <!-- <h4 class="resume-timeline-item-desc-heading font-weight-bold">
+                                                {{ site.data.translate_home['ACHIEVEMENTS'][page.lang] }}
+                                            </h4>
+                                            <p>
+                                                {{ site.data.translate_home['ACHIEVEMENTS_INTERN_CONTENT'][page.lang] }}
+                                            </p> -->
 
-          <div class="skill-container-left">
-            <div class="skill-title">Others</div>
+                                            <h4 class="resume-timeline-item-desc-heading font-weight-bold">
+                                                {{ site.data.translate_home['TECHNOLOGY_USED'][page.lang] }}</h4>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">Angular</span></li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">NodeJs</span></li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">MongoDB</span></li>
+                                            </ul>
+                                        </div>
+                                        <!--//resume-timeline-item-desc-->
 
-          </div>
+                                    </article>
+                                    <!--//resume-timeline-item-->
+
+                                    <article class="resume-timeline-item position-relative pb-5">
+
+                                        <div class="resume-timeline-item-header mb-2">
+                                            <div class="d-flex flex-column flex-md-row">
+                                                <h3 class="resume-position-title font-weight-bold mb-1">
+                                                    {{ site.data.translate_home['STUDENT'][page.lang] }}</h3>
+                                                <!-- <div class="resume-company-name ml-auto">MTA</div> -->
+                                            </div>
+                                            <!--//row-->
+                                            <div class="resume-position-time">2016 - 2021</div>
+                                        </div>
+                                        <!--//resume-timeline-item-header-->
+                                        <div class="resume-timeline-item-desc">
+                                            <p>
+                                                {{ site.data.translate_home['STUDENT_CONTENT'][page.lang] }}
+                                            </p>
+                                            <h4 class="resume-timeline-item-desc-heading font-weight-bold">
+                                                {{ site.data.translate_home['TECHNOLOGY_USED'][page.lang] }}</h4>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">C/C++</span></li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">C#</span></li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">Java</span></li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">HTML/CSS/Javascript</span>
+                                                </li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">ASP.NET MVC</span></li>
+                                                <li class="list-inline-item"><span
+                                                        class="badge badge-primary badge-pill">Python</span></li>
+                                            </ul>
+                                        </div>
+                                        <!--//resume-timeline-item-desc-->
+
+                                    </article>
+
+                                </div>
+                                <!--//resume-timeline-->
+
+
+
+
+
+
+                            </div>
+                        </section>
+                        <!--//experience-section-->
+                    </div>
+                    <div class="col-lg-3">
+                        <section class="resume-section skills-section mb-5">
+                            <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                                <i class="fas fa-book"></i> {{ site.data.translate_home['SKILL'][page.lang] }}</h2>
+                            <div class="resume-section-content">
+                                <div class="resume-skill-item">
+                                    <h4 class="resume-skills-cat font-weight-bold">Frontend</h4>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2">
+                                            <div class="resume-skill-name">Angular</div>
+                                            <div class="progress resume-progress">
+                                                <div class="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style="width: 70%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <div class="resume-skill-name">JavaScript</div>
+                                            <div class="progress resume-progress">
+                                                <div class="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style="width: 75%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <div class="resume-skill-name">HTML/CSS</div>
+                                            <div class="progress resume-progress">
+                                                <div class="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style="width: 70%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <!--//resume-skill-item-->
+
+                                <div class="resume-skill-item">
+                                    <h4 class="resume-skills-cat font-weight-bold">Backend</h4>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <div class="resume-skill-name">NodeJs</div>
+                                            <div class="progress resume-progress">
+                                                <div class="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style="width: 60%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <div class="resume-skill-name">SQL Server</div>
+                                            <div class="progress resume-progress">
+                                                <div class="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style="width: 80%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <div class="resume-skill-name">MongoDB</div>
+                                            <div class="progress resume-progress">
+                                                <div class="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style="width: 60%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--//resume-skill-item-->
+
+                                <div class="resume-skill-item">
+                                    <h4 class="resume-skills-cat font-weight-bold">
+                                        {{ site.data.translate_home['SKILL_OTHERS'][page.lang] }}</h4>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><span class="badge badge-light">Git</span></li>
+                                        <li class="list-inline-item"><span class="badge badge-light">Jekyll</span></li>
+                                        <li class="list-inline-item"><span class="badge badge-light">Wordpress</span>
+                                        </li>
+                                        <li class="list-inline-item"><span class="badge badge-light">Google cloud & AWS</span>
+                                        </li>
+                                        <li class="list-inline-item"><span class="badge badge-light">Java</span>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--//resume-skill-item-->
+                            </div>
+                            <!--resume-section-content-->
+                        </section>
+                        <!--//skills-section-->
+                        <!-- <section class="resume-section education-section mb-5">
+                            <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                                <icon class="fas fa-graduation-cap"></icon> Education
+                            </h2>
+                            <div class="resume-section-content">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <div class="resume-degree font-weight-bold">... University</div>
+                                        <div class="resume-degree-org">Chưa lấy bằng</div>
+                                        <div class="resume-degree-time">2016 - 2021</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section> -->
+                        <!--//education-section-->
+                        <!-- <section class="resume-section reference-section mb-5">
+                            <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Awards</h2>
+                            <div class="resume-section-content">
+                                <ul class="list-unstyled resume-awards-list">
+                                    <li class="mb-2 pl-4 position-relative">
+                                        <i class="resume-award-icon fas fa-trophy position-absolute"
+                                            data-fa-transform="shrink-2"></i>
+                                        <div class="resume-award-name">Award Name Lorem</div>
+                                        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque
+                                            eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.
+                                        </div>
+                                    </li>
+                                    <li class="mb-0 pl-4 position-relative">
+                                        <i class="resume-award-icon fas fa-trophy position-absolute"
+                                            data-fa-transform="shrink-2"></i>
+                                        <div class="resume-award-name">Award Name Ipsum</div>
+                                        <div class="resume-award-desc">Award desc goes here, ultricies nec,
+                                            pellentesque.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section> -->
+                        <!--//language-section-->
+                        <section class="resume-section language-section mb-5">
+                            <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                                <i class="fas fa-globe-asia"></i> {{ site.data.translate_home['LANGUAGE'][page.lang] }}
+                            </h2>
+                            <div class="resume-section-content">
+                                <ul class="list-unstyled resume-lang-list">
+                                    {{ site.data.translate_home['LANGUAGE_CONTENT'][page.lang] }}
+                                </ul>
+                            </div>
+                        </section>
+                        <!--//interests-section-->
+                        <section class="resume-section interests-section mb-5">
+                            <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                                <i class="fas fa-heart"></i> {{ site.data.translate_home['INTERESTS'][page.lang] }}</h2>
+                            <div class="resume-section-content">
+                                <ul class="list-unstyled">
+                                    {{ site.data.translate_home['INTERESTS_CONTENT'][page.lang] }}
+                                </ul>
+                            </div>
+                        </section>
+                        <!--//interests-section-->
+
+                    </div>
+                </div>
+                <!--//row-->
+            </div>
+            <!--//resume-body-->
+
+
         </div>
-      </div>
-    </div>
-    <!-- end content -->
+    </article>
+
+    <footer class="footer text-center pt-2 pb-5">
+        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+        <small class="copyright">{{ site.data.translate_home['DESIGN_BY'][page.lang] }}<i class="fas fa-heart"></i><a
+                href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a>
+            {{ site.data.translate_home['FOR_DEVELOPERS'][page.lang] }}</small>
+    </footer>
 </body>
+
+<style>
+    .progress-bar {
+        background-color: green;
+    }
+
+    .resume-skill-item h4 {
+        text-align: center;
+    }
+</style>
 
 </html>

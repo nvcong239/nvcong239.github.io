@@ -1,0 +1,7 @@
+vi:
+  label: "Tiếng Việt"
+  icon: "VI"
+
+en:
+  label: "English"
+  icon: "EN"
