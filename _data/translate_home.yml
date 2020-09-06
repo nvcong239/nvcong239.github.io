@@ -1,0 +1,118 @@
+MY_NAME:
+  vi: "Nguyễn Văn Công"
+  en: "Nguyen Van Cong"
+
+JOB_TITLE:
+  vi: "Lập trình viên"
+  en: "Programmer"
+
+NICK_NAME:
+  vi: "Nick name: Fire Arrow"
+  en: "Nick name: Fire Arrow"
+
+GMAIL:
+  vi: "nvcong239@gmail.com"
+  en: "nvcong239@gmail.com"
+
+PHONE_NUMBER:
+  vi: "038 459 xxxx"
+  en: "038 459 xxxx"
+
+FACE_BOOK:
+  vi: "Nguyễn Văn Công"
+  en: "Nguyen Van Cong"
+
+GIT_HUB:
+  vi: "Github, Gitlab: nvcong239"
+  en: "Github, Gitlab: nvcong239"
+
+CAREER_SUMMARY:
+  vi: "Tóm tắt nghề nghiệp"
+  en: "Career summary"
+
+CAREER_SUMMARY_CONTENT:
+  vi: "Hiện tại, đang theo học chuyên ngành công nghệ dữ liệu (hệ kỹ sư) tại Học Viện Kỹ Thuật Quân Sự. Có thể lập trình Web Full Stack: Angular + NodeJs.<br>
+      Định hướng trước mắt: Thành thạo Angular và NodeJs.<br>
+      Định hướng tương lai: Mong muốn xây dựng các sản phẩm AI, Big Data trên nền tảng Web, App."
+  en: ""
+
+WORK_EXPERIENCE:
+  vi: "Kinh nghiệm làm việc"
+  en: "Work experience"
+
+SKILL:
+  vi: "Kỹ năng"
+  en: "Skill"
+
+SKILL_OTHERS:
+  vi: "Kỹ năng khác"
+  en: "Others"
+
+INTERN:
+  vi: "Thực tập tại Viện trí tuệ nhân tạo Việt Nam"
+  en: "Intern at AI Academy Vietnam"
+
+STUDENT:
+  vi: "Sinh viên trường Học Viện Kỹ Thuật Quân Sự"
+  en: ""
+
+INTERN_CONTENT:
+  vi: "+ Vị trí: Kỹ sư phần mềm.<br>
+      + Được đào tạo về Angular và Nodejs: Xây dựng 1 project Angular, Viết API bằng Nodejs Express Framework.<br>
+      + Học cách sử dụng cơ sở dữ liệu MongoDB. Cách cài đặt, truy vấn, config trên Server.<br>
+      + Xây dựng trang landing page (sử dụng Jekyll), trang web quản lý hệ thống cho dự án (sử dụng Angular và Nodejs). Tham gia các AI project.<br>
+      + Học được cách Deploy project Angular, Nodejs lên server của google cloud hay của amazon web service."
+  en: "Vị trí: Kỹ sư phần mềm"
+
+STUDENT_CONTENT:
+  vi: "+ Năm đầu tiên và năm thứ 2: Học các môn toán, lập trình cơ bản, ngôn ngữ lập trình C/C++, Java Core, C# Winform.<br>
+       + Năm thứ 3: Học lập trình web: ASP.NET MVC. Học các môn về quản trị cơ sở dữ liệu. Sử dụng Microsoft SQL Server.<br>
+       + Năm thứ 4: Học lập trình Java Web, Trí tuệ nhân tạo: Các thuật toán machine learning, deep learning.<br>
+       + Năm cuối: Đang học các môn khai phá dữ liệu, xử lý dữ liệu lớn.<br>"
+  en: ""
+
+ACHIEVEMENTS:
+  vi: "Kinh nghiệm đạt được"
+  en: "Achievements"
+
+ACHIEVEMENTS_INTERN_CONTENT:
+  vi: ""
+  en: ""
+
+ACHIEVEMENTS_STUDENT_CONTENT:
+  vi: "Được tiếp xúc với rất nhiều công nghệ mới. Học hỏi được kiến thức về Angular, Nodejs, cách tổ chức, quản lý một dự án.
+      
+      Cách sử dụng git để quản lý source code. Deploy project lên server của google cloud hay của amazon web service."
+  en: "Achievements"
+
+TECHNOLOGY_USED:
+  vi: "Công nghệ sử dụng"
+  en: "Technology used"
+
+LANGUAGE:
+  vi: "Ngôn ngữ"
+  en: "Language"
+
+LANGUAGE_CONTENT:
+  vi: "<li>Tiếng Việt <small>(Tự nhiên)</small></li>
+       <li>Tiếng Anh: Bằng TOEIC 585 <small>(Luyện tập)</small></li>"
+  en: "<li>Vietnamese <small>(Native)</small></li>
+       <li>English: TOEIC 585 <small>(Professional)</small></li>"
+
+INTERESTS:
+  vi: "Sở thích"
+  en: "Interest"
+
+INTERESTS_CONTENT:
+  vi: "<li>Anime</li>
+       <li>Tiểu thuyết trinh thám</li>"
+  en: "<li>Anime</li>
+       <li>Detective novels</li>"
+
+DESIGN_BY:
+  vi: "Thiết kế bởi "
+  en: "Designed by "
+
+FOR_DEVELOPERS:
+  vi: "cho các lập trình viên"
+  en: "for developers"

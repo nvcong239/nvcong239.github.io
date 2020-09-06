@@ -8651,7 +8651,8 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 
 .resume-position-time {
   font-size: 0.875rem;
-  color: #aab4c3;
+  color: #000000;
+  font-style: italic;
 }
 
 .resume-position-title {
