@@ -2,7 +2,7 @@
 
 <body>
     <!-- Language -->
-    <div style="position: fixed; top: 50%; left: 90%; z-index: 999;">
+    <div style="position: fixed; top: 50%; left: 90%; z-index: 999; display: none;">
         <!-- lấy ra các bài post và page liên quan tới trang hiện tại-->
         {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
         {% if posts.size == 0 %}
